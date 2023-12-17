@@ -62,7 +62,7 @@ const Results = () => {
                     </HStack>
                 </Box>
                 <Box p="6%">
-                    <Image src={dibujo} w={{ base: "100%", md: "80%", lg: "40%" }} ml={{ base: "7vh", md: "10vh", lg: "30vh" }} />
+                    <Image src={dibujo} w={{ base: "70%", md: "80%", lg: "40%" }} ml={{ base: "6vh", md: "10vh", lg: "30vh" }} />
                     <Text textAlign="center">
                         En base a nuestros cálculos, {nombre} debe comer {racionRecomendada}
                     </Text>
