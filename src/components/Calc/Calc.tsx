@@ -22,7 +22,7 @@ const Calc = () => {
         navigate("/spinner");
         setTimeout(() => {
             navigate("/results");
-        }, 2000);
+        }, 3000);
     };
 
     return (

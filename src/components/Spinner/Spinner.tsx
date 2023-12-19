@@ -19,12 +19,7 @@ const Spinner = () => {
     return (
         <>
             <Header />
-            <Flex
-                direction="column"
-                align="center"
-                justify="center"
-                height="80vh" // Ajusta la altura para centrar verticalmente
-            >
+            <Flex direction="column" align="center" justify="center" height="80vh">
                 <PulsatingText as="b" fontSize="xl">
                     Calculando...
                 </PulsatingText>
