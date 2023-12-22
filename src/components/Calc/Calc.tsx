@@ -60,7 +60,7 @@ const Calc = () => {
                                 Cachorro (hasta 1 año)
                             </Radio>
                             <Radio colorScheme="yellow" value="adulto">
-                                Jóven / adulto
+                                Joven / adulto
                             </Radio>
                         </Stack>
                     </RadioGroup>
