@@ -7,11 +7,13 @@ const Home = () => {
     return (
         <>
             <Header />
-            <Box w="100%" display="flex" justifyContent="center" mt="15vh">
+            <Box w="100%" display="flex" justifyContent="center" mt="10vh">
                 {" "}
                 <Image src={purrtion} w={{ base: "80%", md: "70%", lg: "40%" }} />
             </Box>
-            <Calc />
+            <Box mb="5%">
+                <Calc />
+            </Box>
         </>
     );
 };
