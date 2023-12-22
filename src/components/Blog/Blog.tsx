@@ -11,19 +11,27 @@ const Blog: React.FC = () => {
         <>
             <Header />
 
-            <Card w="30vw" p="3%" boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)" zIndex={50} position="absolute" top="630" left="20">
+            <Card
+                w={{ base: "90vw", md: "60vw", lg: "30vw" }}
+                p="3%"
+                boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
+                zIndex={50}
+                position="absolute"
+                top={{ base: "230", md: "450", lg: "880" }}
+                left={{ base: "5", md: "10", lg: "20" }}
+            >
                 <Badge variant="subtle" colorScheme="orange" w="115px" p="3px" borderRadius="5" mb="2vh">
                     MICHI MISTERIOS
                 </Badge>
-                <Text as="b" fontSize={{ base: "1.1em", md: "1.2em", lg: "1.2em" }} mb="2vh">
+                <Text as="b" fontSize={{ base: "0.95em", md: "1.2em", lg: "1.2em" }} mb="1vh">
                     Curiosidades
                 </Text>
-                <Text>Aquí encontrarás algunas de las curiosidades más locas de los gatos!</Text>
+                <Text fontSize={{ base: "0.95em", md: "1.2em", lg: "1.1em" }}>Aquí encontrarás algunas de las curiosidades más locas de los gatos!</Text>
             </Card>
 
-            <Image src={bg} w="100%" h="auto" />
+            <Image src={bg} w="100%" h="auto" mt={{ base: "10vh", md: "4vh" }} />
 
-            <Box className="blog-grid" mt={{ base: "60vh", md: "100vh", lg: "10vh" }} mb="5%">
+            <Box className="blog-grid" mt={{ base: "18vh", md: "12vh", lg: "8vh" }} mb="5%">
                 {postsData.map((_, index) => (
                     <Post key={index} index={index} />
                 ))}

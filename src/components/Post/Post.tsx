@@ -31,17 +31,17 @@ const Post: React.FC<PostProps> = ({ index = 0 }) => {
     const post: PostData = postsData[validIndex];
 
     return (
-        <Card w={{ base: "100%", md: "100%", lg: "90%" }} mt="2vh" boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)">
+        <Card w={{ base: "90%", md: "100%", lg: "90%" }} ml={{ base: "2.5vh", md: "1vh" }} mt="2vh" boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)">
             <Flex direction="column" align="center">
                 <Box>{catImage && <Image src={catImage} alt="Imagen de gato" mb={4} w="100vw" h={{ base: "30vh", md: "30vh", lg: "25vh" }} objectFit="cover" />}</Box>
             </Flex>
             <Box pl="2vh" pr="2vh" pb="2vh">
-                <Text as="b" fontSize={{ base: "1.2em", md: "1.2em", lg: "1.3em" }} pb="4%">
+                <Text as="b" fontSize={{ base: "1.1em", md: "1.2em", lg: "1.3em" }} pb="4%">
                     {post.title}
                 </Text>
-                <Text fontSize="md">{post.text}</Text>
+                <Text fontSize={{ base: "0.95em", md: "1em", lg: "1em" }}>{post.text}</Text>
                 <Collapse startingHeight={0} in={show}>
-                    {post.collapse}
+                    <Text fontSize={{ base: "0.95em", md: "1em", lg: "1em" }}>{post.collapse}</Text>
                 </Collapse>
                 <Button size="sm" bg="#ffc700" _hover={{ bg: "#ffde59" }} onClick={handleToggle} mt="1rem">
                     Ver {show ? "menos" : "más"}
