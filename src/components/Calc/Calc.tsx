@@ -1,17 +1,22 @@
-import { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { Container, FormControl, FormLabel, Input, Button, Text, RadioGroup, Radio, Stack, Slider, SliderFilledTrack, SliderThumb, SliderTrack, Card } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import useStore from "../../store/store";
+import useStore, { EstadoGato, AccionesGato } from "../../store/store";
 
-const Calc = () => {
+const Calc: React.FC = () => {
     const navigate = useNavigate();
-    const { setNombre, setEdad, setTipoGato, setPeso, setNivelActividad, nombre } = useStore();
+    const { setNombre, setEdad, setTipoGato, setPeso, setNivelActividad, nombre } = useStore() as EstadoGato & AccionesGato;
 
-    const { edad, tipoGato, peso } = useStore((state) => ({ edad: state.edad, tipoGato: state.tipoGato, peso: state.peso }));
-    const [isNombreValido, setIsNombreValido] = useState(true);
+    const { edad, tipoGato, peso } = useStore((state: EstadoGato) => ({ edad: state.edad, tipoGato: state.tipoGato, peso: state.peso }));
+    const [isNombreValido, setIsNombreValido] = useState<boolean>(true);
 
     const maxPeso = 10;
     const step = 0.1;
+
+    const handleNombreChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setNombre(e.target.value);
+        setIsNombreValido(true);
+    };
 
     const handleSubmit = () => {
         if (!nombre.trim()) {
@@ -145,9 +150,10 @@ const Calc = () => {
                         </Stack>
                     </RadioGroup>
                 </FormControl>
+
                 <FormControl isInvalid={!isNombreValido} mb="3vh">
                     <FormLabel>Nombre del michi</FormLabel>
-                    <Input placeholder="Nombre" onChange={(e) => setNombre(e.target.value)} onBlur={() => setIsNombreValido(!!nombre.trim())} />
+                    <Input placeholder="Nombre" value={nombre} onChange={handleNombreChange} onBlur={() => setIsNombreValido(!!nombre.trim())} />
                     {!isNombreValido && <Text color="red.500">Por favor, ingresa el nombre de tu gato</Text>}
                 </FormControl>
 

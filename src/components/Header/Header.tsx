@@ -1,8 +1,9 @@
+import React from "react";
 import { Box, Flex, Image, HStack } from "@chakra-ui/react";
 import logo from "../../assets/images/1.svg";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1rem" bgGradient="linear(to-r,#ffc700, #ffde59)" position="fixed" width="100%" top={0} zIndex={100}>
             <Flex align="center" mr={5}>

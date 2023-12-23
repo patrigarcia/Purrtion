@@ -1,3 +1,4 @@
+import React from "react";
 import { quantum } from "ldrs";
 import { Flex, Box, Text } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
@@ -13,7 +14,7 @@ const PulsatingText = styled(Text)`
     animation: ${pulse} 1.5s ease-in-out infinite;
 `;
 
-const Spinner = () => {
+const Spinner: React.FC = () => {
     quantum.register();
 
     return (

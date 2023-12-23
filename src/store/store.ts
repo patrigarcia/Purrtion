@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 
-
-interface EstadoGato {
+export interface EstadoGato {
     nombre: string;
     edad: number;
     tipoGato: 'cachorro' | 'adulto' | 'exterior' | 'interior' | 'mixto';
@@ -10,7 +9,7 @@ interface EstadoGato {
     expandedPost: number; 
 }
 
-interface AccionesGato {
+export interface AccionesGato {
     setNombre: (nombre: string) => void;
     setEdad: (edad: number) => void;
     setTipoGato: (tipoGato: 'cachorro' | 'adulto' | 'exterior' | 'interior' | 'mixto') => void;
@@ -20,7 +19,6 @@ interface AccionesGato {
 }
 
 const useStore = create<EstadoGato & AccionesGato>((set) => ({
-   
     nombre: '',
     edad: 1,
     tipoGato: 'cachorro',
@@ -28,7 +26,6 @@ const useStore = create<EstadoGato & AccionesGato>((set) => ({
     nivelActividad: 'activo',
     expandedPost: -1, 
 
-    
     setNombre: (nombre) => set({ nombre }),
     setEdad: (edad) => set({ edad }),
     setTipoGato: (tipoGato) => set({ tipoGato }),
