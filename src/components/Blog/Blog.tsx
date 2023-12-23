@@ -1,10 +1,16 @@
 import React from "react";
+import { Box, Text, Image, Card, Badge } from "@chakra-ui/react";
 import Header from "../Header/Header";
 import Post from "../Post/Post";
 import postsData from "../../assets/data/posts.json";
-import "../../../src/index.css";
-import { Box, Text, Image, Card, Badge } from "@chakra-ui/react";
 import bg from "../../assets/images/gato_bg.png";
+import "../../../src/index.css";
+
+export interface PostData {
+    title: string;
+    text: string;
+    collapse: string;
+}
 
 const Blog: React.FC = () => {
     return (
@@ -34,8 +40,8 @@ const Blog: React.FC = () => {
             </Box>
 
             <Box className="blog-grid" mt={{ base: "18vh", md: "12vh", lg: "8vh" }} mb="5%">
-                {postsData.map((_, index) => (
-                    <Post key={index} index={index} />
+                {postsData.map((post: PostData, index: number) => (
+                    <Post key={index} {...post} />
                 ))}
             </Box>
         </>

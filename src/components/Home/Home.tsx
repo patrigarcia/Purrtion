@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <>
             <Header />
-            <Box w="100%" display="flex" justifyContent="center" mt="10vh">
+            <Box w="100%" display="flex" justifyContent="center" mt="12vh">
                 {" "}
                 <Image src={purrtion} w={{ base: "80%", md: "70%", lg: "40%" }} />
             </Box>

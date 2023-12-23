@@ -1,6 +1,6 @@
 import { useDisclosure, Button, Collapse, Box, Text } from "@chakra-ui/react";
 
-const Faqs = () => {
+const Faqs: React.FC = () => {
     const { isOpen, onToggle } = useDisclosure();
 
     return (

@@ -14,7 +14,7 @@ const Post: React.FC<PostProps> = ({ index = 0 }) => {
     useEffect(() => {
         const fetchCatImage = async () => {
             try {
-                const response = await axios.get<string[]>("http://shibe.online/api/cats?count=1");
+                const response = await axios.get<string[]>("https://shibe.online/api/cats?count=1");
                 setCatImage(response.data[0]);
             } catch (error) {
                 console.error("Error:", error);
