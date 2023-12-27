@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Box, Text, Image, Collapse, Button, Card, Flex } from "@chakra-ui/react";
 import axios from "axios";
-import postsData from "../../assets/data/posts.json";
 import { PostData } from "../../types";
 
 interface PostProps {
-    index?: number;
+    post: PostData;
 }
 
-const Post: React.FC<PostProps> = ({ index = 0 }) => {
+const Post: React.FC<PostProps> = ({ post }) => {
     const [catImage, setCatImage] = useState<string>("");
 
     useEffect(() => {
@@ -26,9 +25,6 @@ const Post: React.FC<PostProps> = ({ index = 0 }) => {
 
     const [show, setShow] = useState(false);
     const handleToggle = () => setShow(!show);
-
-    const validIndex = index >= 0 && index < postsData.length ? index : 0;
-    const post: PostData = postsData[validIndex];
 
     return (
         <Card w={{ base: "90%", md: "100%", lg: "90%" }} ml={{ base: "2.5vh", md: "1vh" }} mt="2vh" boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)">

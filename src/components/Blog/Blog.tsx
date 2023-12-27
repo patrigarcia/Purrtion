@@ -40,8 +40,8 @@ const Blog: React.FC = () => {
             </Box>
 
             <Box className="blog-grid" mt={{ base: "18vh", md: "12vh", lg: "8vh" }} mb="5%">
-                {postsData.map((post: PostData, index: number) => (
-                    <Post key={index} {...post} />
+                {postsData.map((post, index) => (
+                    <Post key={index} post={post} />
                 ))}
             </Box>
         </>
