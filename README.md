@@ -2,7 +2,7 @@
 
 # 🐾 Purrtion | Cosas de michis
 
-![Logo de Purrtion](src/assets/images/Readme/logo_r.svg)
+![Logo de Purrtion](src/assets/images/purrtion_ban.png)
 
 ## 📚 Índice
 
